@@ -23,7 +23,7 @@ func main() {
 	}
 	buf := bytes.Buffer{}
 
-	// Write the person to disk.
+	// Write person to buffer.
 	out, err := proto.Marshal(&person)
 	if err != nil {
 		log.Fatalln("Failed to encode address book:", err)
@@ -33,7 +33,7 @@ func main() {
 		log.Fatalln("Failed to write address book:", err)
 	}
 
-	// Read person from disk
+	// Read person from buffer
 	samePerson := pb.Person{}
 	content := buf.Bytes()
 
